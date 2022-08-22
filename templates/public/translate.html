@@ -1,0 +1,137 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %} Translate {% endblock title %}
+
+{% block main %} 
+
+<div class="container">
+    <h1>Translate</h1>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <!-- <form method="post"> -->
+                <select class="form-select" id="option" onchange="swapping()" style="width: 30%; float: right !important;">
+                    <option selected value="1">English to Punjabi</option>
+                    <option value="2">Punjabi to English</option>
+                </select>
+            <!-- </form> -->
+
+            
+        </div>
+    </div>
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-md-6">
+                    <div class="form-group">
+                        <h3> Enter Text Here </h3>
+                        <!-- <input class= "form-control" type="text" name="text_area" id="text_area" placeholder="Enter text"> -->
+                        <textarea class="form-control" type="text" name="text_area" id="text_area" placeholder="Enter text" rows="3"></textarea>
+                    </div>
+        </div>
+        <div class="col-md-6">
+                    <div class="form-group">
+                        <h3> Converted Text </h3>
+                        <!-- <input class= "form-control" type="text" name="text_area" id="text_area" placeholder="Enter text"> -->
+                        <textarea class="form-control" type="text" name="result_area" id="result_area" placeholder="Enter text" rows="3"></textarea>
+                    </div>
+        </div>
+    </div>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-6">
+                <table>
+                    <tr>
+                        <th onclick = "addChar('ਂ')">&nbsp; ਂ &nbsp;</th>
+                        <th onclick = "addChar('ਾ')">&nbsp; ਾ &nbsp;</th>
+                        <th onclick = "addChar('ਾਂ')">&nbsp; ਾਂ &nbsp;</th>
+                        <th onclick = "addChar('ਿ')">&nbsp; ਿ &nbsp;</th>
+                        <th onclick = "addChar('ੀ')">&nbsp; ੀ &nbsp;</th>
+                        <th onclick = "addChar('ੇ')">&nbsp; ੇ &nbsp;</th>
+                        <th onclick = "addChar('ੈ')">&nbsp; ੈ &nbsp;</th>
+                        <th onclick = "addChar('ੋ')">&nbsp; ੋ &nbsp;</th>
+                        <th onclick = "addChar('ੌ')">&nbsp; ੌ &nbsp;</th>
+                        <th onclick = "addChar('ੁ')">&nbsp; ੁ &nbsp;</th>
+                        <th onclick = "addChar('ੂ')">&nbsp; ੂ &nbsp;</th>
+                        <td onclick = ""> &nbsp; &nbsp; &nbsp; </td>
+                        <td onclick = ""> &nbsp; &nbsp; &nbsp; </td>
+                    </tr>
+                    <tr> 
+                        <th onclick = "addChar('ੰ')">&nbsp; ੰ &nbsp;</th>
+                        <td onclick = "addChar('ੳ')">&nbsp; ੳ &nbsp;</td>
+                        <td onclick = "addChar('ਅ')">&nbsp; ਅ &nbsp;</td>
+                        <td onclick = "addChar('ੲ')">&nbsp; ੲ &nbsp;</td>
+                        <td onclick = "addChar('ਸ')">&nbsp; ਸ &nbsp;</td>
+                        <td onclick = "addChar('ਹ')">&nbsp; ਹ &nbsp;</td>
+                        <td onclick = "addChar('ਕ')">&nbsp; ਕ &nbsp;</td>
+                        <td onclick = "addChar('ਖ')">&nbsp; ਖ &nbsp;</td>
+                        <td onclick = "addChar('ਗ')">&nbsp; ਗ &nbsp;</td>
+                        <td onclick = "addChar('ਘ')">&nbsp; ਘ &nbsp;</td>
+                        <td onclick = "addChar('ਙ')">&nbsp; ਙ &nbsp;</td>
+                        <td onclick = "addChar('ਉ')">&nbsp; ਉ &nbsp;</td>
+                        <td onclick = "addChar('ਊ')">&nbsp; ਊ &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th onclick = "addChar('ੱ')">&nbsp; ੱ &nbsp;</th>
+                        <td onclick = "addChar('ਚ')">&nbsp; ਚ &nbsp;</td>
+                        <td onclick = "addChar('ਛ')">&nbsp; ਛ &nbsp;</td>
+                        <td onclick = "addChar('ਜ')">&nbsp; ਜ &nbsp;</td>
+                        <td onclick = "addChar('ਝ')">&nbsp; ਝ &nbsp;</td>
+                        <td onclick = "addChar('ਞ')">&nbsp; ਞ &nbsp;</td>
+                        <td onclick = "addChar('ਟ')">&nbsp; ਟ &nbsp;</td>
+                        <td onclick = "addChar('ਠ')">&nbsp; ਠ &nbsp;</td>
+                        <td onclick = "addChar('ਢ')">&nbsp; ਢ &nbsp;</td>
+                        <td onclick = "addChar('ਣ')">&nbsp; ਣ &nbsp;</td>
+                        <td onclick = "addChar('ਓ')">&nbsp; ਓ &nbsp;</td>
+                        <td onclick = "addChar('ਉ')">&nbsp; ਉ &nbsp;</td>
+                        <td onclick = "addChar('ਅ')">&nbsp; ਅ &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th onclick = "addChar('੍ਰ')">&nbsp; ੍ &nbsp;</th>
+                        <td onclick = "addChar('ਤ')">&nbsp; ਤ &nbsp;</td>
+                        <td onclick = "addChar('ਥ')">&nbsp; ਥ &nbsp;</td>
+                        <td onclick = "addChar('ਦ')">&nbsp; ਦ &nbsp;</td>
+                        <td onclick = "addChar('ਧ')">&nbsp; ਧ &nbsp;</td>
+                        <td onclick = "addChar('ਨ')">&nbsp; ਨ &nbsp;</td>
+                        <td onclick = "addChar('ਪ')">&nbsp; ਪ &nbsp;</td>
+                        <td onclick = "addChar('ਫ')">&nbsp; ਫ &nbsp;</td>
+                        <td onclick = "addChar('ਬ')">&nbsp; ਬ &nbsp;</td>
+                        <td onclick = "addChar('ਭ')">&nbsp; ਭ &nbsp;</td>
+                        <td onclick = "addChar('ਮ')">&nbsp; ਮ &nbsp;</td>
+                        <td onclick = "addChar('ਆ')">&nbsp; ਆ &nbsp;</td>
+                        <td onclick = "addChar('ਐ')">&nbsp; ਐ &nbsp;</td>
+                    <tr>
+                    <tr>
+                        <th onclick = "addChar('੍ਹ')">&nbsp; ੍ &nbsp;</th>
+                        <td onclick = "addChar('ਯ')">&nbsp; ਯ &nbsp;</td>
+                        <td onclick = "addChar('ਰ')">&nbsp; ਰ &nbsp;</td>
+                        <td onclick = "addChar('ਲ')">&nbsp; ਲ &nbsp;</td>
+                        <td onclick = "addChar('ਵ')">&nbsp; ਵ &nbsp;</td>
+                        <td onclick = "addChar('ੜ')">&nbsp; ੜ &nbsp;</td>
+                        <td onclick = "addChar('ਸ਼')">&nbsp; ਸ਼ &nbsp;</td>
+                        <td onclick = "addChar('ਖ਼')">&nbsp; ਖ਼ &nbsp;</td>
+                        <td onclick = "addChar('ਗ਼')">&nbsp; ਗ਼ &nbsp;</td>
+                        <td onclick = "addChar('ਜ਼')">&nbsp; ਜ਼ &nbsp;</td>
+                        <td onclick = "addChar('ਫ਼')">&nbsp; ਫ਼ &nbsp;</td>
+                        <td onclick = "addChar('ਔ')">&nbsp; ਔ &nbsp;</td>
+                        <td onclick = "addChar('ਏ')">&nbsp; ਏ &nbsp;</td>
+                    <tr>
+                    <tr>
+                        <th onclick = "addChar('੍ਵ')">&nbsp; ੍ਵ &nbsp;</th>
+                        <td onclick = ""> &nbsp; &nbsp; &nbsp; </td>
+                        <td onclick = "addChar('  ')" colspan="8" style="width: 200px;">&nbsp; &nbsp; &nbsp; &nbsp; 	 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ਖਾਲੀ ਥਾਂ </td>
+                        
+                        <td onclick = "addChar('ਲ਼')">&nbsp; ਲ਼ &nbsp;</td>
+                        <td onclick = "addChar('ਇ')">&nbsp; ਇ &nbsp;</td>
+                        <td onclick = "addChar('ਈ')">&nbsp; ਈ &nbsp;</td>
+                    <tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="div" style="text-align: center;">
+            <button type="button" onclick="translating()" class="btn btn-primary" style="margin-top: 20px; text-align: center;"> Translate </button>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock main %}
